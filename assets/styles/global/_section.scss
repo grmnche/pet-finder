@@ -1,0 +1,120 @@
+@use '../mixins/media' as *;
+
+.section {
+  margin-bottom: 80px;
+
+  @include media(max, tablet) {
+    margin-bottom: 50px;
+  }
+
+  @include media(max, mobile) {
+    margin-bottom: 40px;
+
+    br {
+      display: none;
+    }
+  }
+
+  &_underline:has(.container) .container,
+  &_underline:not(:has(.container)) {
+    position: relative;
+    padding-bottom: 80px;
+
+    @include media(max, tablet) {
+      padding-bottom: 50px;
+    }
+
+    @include media(max, mobile) {
+      padding-bottom: 40px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      border-bottom: 1px dashed var(--color-grey-1);
+
+      @include media(max, mobile) {
+        left: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__title {
+    margin-right: auto;
+    &_space {
+      margin-bottom: 30px;
+
+      @include media(max, tablet) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include media(max, mobile) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-grey-1);
+  }
+
+  &__tab {
+    position: relative;
+    font-weight: 700;
+    padding-bottom: 15px;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+    }
+
+    &.active::after {
+      background-color: var(--color-black);
+    }
+  }
+}
+
+.section-grey {
+  padding: 60px 0 100px;
+  background-color: var(--color-grey-2);
+
+  @include media(max, tablet) {
+    padding: 70px 0;
+  }
+
+  @include media(max, mobile) {
+    padding: 50px 0;
+  }
+}
+
+.section .section:last-child {
+  margin-bottom: 0;
+}

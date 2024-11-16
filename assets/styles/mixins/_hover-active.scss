@@ -1,0 +1,11 @@
+@mixin hover-active() {
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}

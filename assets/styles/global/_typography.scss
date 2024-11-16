@@ -1,0 +1,61 @@
+@use '../mixins/media' as *;
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  display: block;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+h1,
+.h1 {
+  font-size: 64px !important;
+  line-height: 60px !important;
+
+  @include media(max, tablet) {
+    font-size: 40px !important;
+    line-height: 40px !important;
+  }
+
+  @include media(max, mobile) {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 40px !important;
+  line-height: 40px !important;
+
+  @include media(max, tablet) {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+
+  @include media(max, mobile) {
+    font-size: 22px !important;
+    line-height: 24px !important;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 30px !important;
+  line-height: 38px !important;
+
+  @include media(max, tablet) {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+
+  @include media(max, mobile) {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+}

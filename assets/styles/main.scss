@@ -1,0 +1,48 @@
+@use './base.scss' as *;
+@use './mixins/hover-active' as *;
+@use './mixins/media' as *;
+@use './mixins.scss' as *;
+@use './global' as *;
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+main {
+  width: 100%;
+}
+
+a {
+  display: inline-block;
+  color: var(--color-black-mute);
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 3px;
+
+  @include hover-active;
+}
+
+main {
+  margin: 100px 0 !important;
+
+  @include media(max, tablet) {
+    margin: 70px 0 !important;
+  }
+
+  @include media(max, mobile) {
+    margin: 40px 0 !important;
+  }
+}
+
+.section {
+  margin-bottom: 100px;
+
+  @include media(max, tablet) {
+    margin-bottom: 70px;
+  }
+
+  @include media(max, mobile) {
+    margin-bottom: 40px;
+  }
+}
